@@ -2,13 +2,15 @@ import axios from "axios";
 
 class ArmoriesApi{
     async view ({characterName}:{characterName:string}){
-        return axios.get(`armories/characters/${characterName}`)
+        const response = axios.get(`armories/characters/${characterName}`)
+        return response
     }
 
     async moreView (
         {characterName,detail}:{characterName:string,detail:string}
     ){
-        return axios.get(`armories/characters/${characterName}?filters=${detail}`)
+        const response = axios.get(`armories/characters/${characterName}?filters=${detail}`)
+        return response
     }
 
 }
