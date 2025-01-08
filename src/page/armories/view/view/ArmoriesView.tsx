@@ -4,6 +4,7 @@ import {ArmoriesViewController} from "../controller/ArmoriesViewController";
 import { InforView } from './InforView';
 import { AvatarView } from './AvatarView';
 import styled from 'styled-components';
+import { Button } from '@/package/component';
 
 export const ArmoriesView = () => {
 
@@ -19,18 +20,22 @@ export const ArmoriesView = () => {
     //     }
     // }, [allData]);
 
-    console.log('???',allData)
+    console.log('111???',allData)
 
     return (
         <div>
             
             <ViewWrap>
                 <div className='avatarSec'>
-                    <AvatarView data={allData?.armoryProfile ?? undefined}/>
+                    <AvatarView data={allData?.ArmoryProfile ?? undefined}/>
                 </div>
                 <div className='infoSec'>
+                    <div className="infoSec--tab">
+                        <Button style={{padding:'5px 10px'}}>장비</Button>
+                        <Button style={{padding:'5px 10px'}}>장비</Button>
+                    </div>
                     <div className="infoSec--id">{id}</div>
-                    <InforView data={allData?.armoryEquipment ?? undefined}/>
+                    <InforView data={allData?.ArmoryEquipment ?? undefined}/>
                 </div>
             </ViewWrap>
         
@@ -50,10 +55,26 @@ const ViewWrap= styled.div`
             font-weight:600;
             margin-bottom:10px;
         }
+        &--tab{
+            display:flex;
+            align-items:flex-start;
+            justify-content:flex-start;
+            gap:10px;
+            margin-bottom:30px;
+            button{
+                color:var(--txt-colorA);
+            }
+        }
         width:60%;
         position:absolute;
         right:0%;
-        top:50%;
-        transform:translateY(-50%);
+        top:0;
+        height:100%;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:flex-start;
+        // top:50%;
+        // transform:translateY(-50%);
     }
 `

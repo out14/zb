@@ -5,12 +5,12 @@ import {useEffect, useRef, useState} from "react";
 import { useNavigate } from "react-router-dom";
 
 interface EventItem{
-    link:string
-    rewardDate?:string
-    startDate:string
-    endDate?:string
-    thumbnail:string
-    title:string
+    Link:string
+    RewardDate?:string
+    StartDate:string
+    EndDate?:string
+    Thumbnail:string
+    Title:string
 }
 
 export const Event = () => {
@@ -22,7 +22,7 @@ export const Event = () => {
     // console.log(noticeData.data)
 
     // if(!noticeData) return 
-    
+
     const slideRef = useRef(null)
 
     const [ count,setCount ]=useState(0)
@@ -44,19 +44,19 @@ export const Event = () => {
     const handleSlide = (event:'prev'|'next')=>{
         if(event==='prev'){
             if( count>0){
-                slideRef.current.style.setProperty('transition-duration','0.5s')
+                slideRef.current?.style.setProperty('transition-duration','0.5s')
                 setCount(count - 1)
             }else {
-                slideRef.current.style.setProperty('transition-duration','0.2s')
+                slideRef.current?.style.setProperty('transition-duration','0.2s')
                 // setCount(noticeData.data.length - 1)
                 setCount(4)
             }
         }else{
             if(slideState){
-                slideRef.current.style.setProperty('transition-duration','0.5s')
+                slideRef.current?.style.setProperty('transition-duration','0.5s')
                 setCount(count + 1)
             }else {
-                slideRef.current.style.setProperty('transition-duration','0.2s')
+                slideRef.current?.style.setProperty('transition-duration','0.2s')
                 setCount(0)
             }
         }
@@ -65,10 +65,10 @@ export const Event = () => {
     useEffect(()=>{
         const slideTimer = setInterval(()=>{
             if(slideState){
-                slideRef.current.style.setProperty('transition-duration','0.5s')
+                slideRef.current?.style.setProperty('transition-duration','0.5s')
                 setCount( count + 1)
             }else{
-                slideRef.current.style.setProperty('transition-duration','0.2s')
+                slideRef.current?.style.setProperty('transition-duration','0.2s')
                 setCount(0)
             }
         },4000)
@@ -103,17 +103,17 @@ export const Event = () => {
                             data-label={idx}
                         >
                            <div className="item--img">
-                               <img src={e.thumbnail} alt=""/>
+                               <img src={e.Thumbnail} alt=""/>
                            </div>
                            <div className="item--des">
                                <div className="item--des--tit">
-                                   {e.title}
+                                   {e.Title}
                                </div>
                                <div className="item--des--date">
-                                   <span>진행기간</span> {dateFormat(e.startDate)}~{e.endDate?dateFormat(e.endDate):'-'}
+                                   <span>진행기간</span> {dateFormat(e.StartDate)}~{e.EndDate?dateFormat(e.EndDate):'-'}
                                </div>
                                <div className="item--des--date">
-                                   <span>발표기간</span> {e.rewardDate?dateFormat(e.rewardDate):'-'}
+                                   <span>발표기간</span> {e.RewardDate?dateFormat(e.RewardDate):'-'}
                                </div>
                            </div>
                         </li>

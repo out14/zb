@@ -16,15 +16,15 @@ export const MainController = () => {
         queryKey:["type"]
     })
 
-    const { data:cadData } =useQuery({
-        queryFn: async ()=> await contentApi.cad() ??'error',
-        queryKey:["cad"]
-    })
+    // const { data:cadData } =useQuery({
+    //     queryFn: async ()=> await contentApi.cad() ??'error',
+    //     queryKey:["cad"]
+    // })
 
-    const { data:cgrData } =useQuery({
-        queryFn: async ()=> await contentApi.cgr() ??'error',
-        queryKey:["cgr"]
-    })
+    // const { data:cgrData } =useQuery({
+    //     queryFn: async ()=> await contentApi.cgr() ??'error',
+    //     queryKey:["cgr"]
+    // })
 
     const {data:calendarData}=useSuspenseQuery({
         queryFn:async ()=> await contentApi.calendar() ??'error',
@@ -52,8 +52,8 @@ export const MainController = () => {
 
     return {
         eventData,
-        cadData,
-        cgrData,
+        // cadData,
+        // cgrData,
         calendarData,
         copySchedule,
         handleModal

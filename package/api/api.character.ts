@@ -14,9 +14,10 @@ export interface CharacterType{
 //armory?name=홍백스테이
 class CharacterApi{
     async view({characterName,filters}:{characterName:string,filters:string}){
-        const response = await axios.get(`status?name=${characterName}&filters=${filters}`)
+        // const response = await axios.get(`status?name=${characterName}&filters=${filters}`)
+        const response = await axios.get(`armories/characters/${characterName}`)
 
-        return response?.data.data
+        return response?.data
     }
 
     async armory({characterName}:{characterName:string}){

@@ -8,15 +8,15 @@ export const AvatarView = ({data}:{data?:any}) => {
     return (
         <AvatarViewStyle>
             <div className="avatarImg">
-                <img src={data?.characterImage} alt="" />    
+                <img src={data?.CharacterImage} alt="" />    
             </div>          
             <div className="avatarInfo">
                 <ul>
-                    <li>서버 : {data?.serverName}</li>
-                    <li>원정대 레벨 : {data?.expeditionLevel}</li>
-                    <li>아이템 레벨 : {data?.itemAvgLevel}</li>
-                    <li>길드 : {data?.guildName} &lt; {data?.guildMemberGrade} &gt; </li>
-                    <li>pvp : {data?.pvpGradeName}</li>
+                    <li>서버 : {data?.ServerName}</li>
+                    <li>원정대 레벨 : {data?.ExpeditionLevel}</li>
+                    <li>아이템 레벨 : {data?.ItemAvgLevel}</li>
+                    <li>길드 : {data?.GuildName} &lt; {data?.GuildMemberGrade} &gt; </li>
+                    <li>pvp : {data?.PvpGradeName}</li>
                     
                 </ul>
             </div>

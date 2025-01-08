@@ -15,8 +15,9 @@ class ContentApi{
     }
 
     async calendar(){
-        const res = await  axios.get(`/calendar`)
-
+        //const res = await  axios.get(`/calendar`)
+        const res = await  axios.get(`/gamecontents/calendar`)
+        
         return res?.data.data
     }
 

@@ -8,6 +8,7 @@ export const ArmoriesViewController = () => {
     const { id }=useParams()
 
     const { data:allData } = useQuery({
+        //queryFn:()=>characterApi.view({characterName:id ??'',filters:''}),
         queryFn:()=>characterApi.view({characterName:id ??'',filters:''}),
         queryKey:['characterName',id],
         enabled: !!id 

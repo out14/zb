@@ -12,12 +12,12 @@ export const Main = () => {
                     <Event/>
                 </Card>
             </Page.Contents>
-            
+            {/* 
             <Page.Contents>
                 <div className="title">도전 컨텐츠</div>
                 <Content/>
             </Page.Contents>
- 
+            */}
             <Page.Contents>
                 <div className="title">일정</div>
                 <Schedule/>

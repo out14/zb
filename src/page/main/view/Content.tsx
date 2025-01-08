@@ -47,17 +47,19 @@ interface CgrRewardItems{
 
 export const Content = () => {
 
-    const {cadData,cgrData,handleModal}=useController(MainController)
+    const {
+        //cadData,cgrData,
+        handleModal}=useController(MainController)
 
-    console.log(cadData,'cadData')
-    console.log(cgrData,'cgrData')
+    // console.log(cadData,'cadData')
+    // console.log(cgrData,'cgrData')
 
     return (
         <Card.Wrap>
 
             <Card>
                 <ContentStyle>
-                    {cadData?.map((e:Cad)=>(
+                    {/* {cadData?.map((e:Cad)=>(
                         <dl key={e.name}>
                             <dt className='cursor' onClick={()=>handleModal(e)}>
                                 <img src={e.image} alt={e.name} />
@@ -71,7 +73,7 @@ export const Content = () => {
                                 </span>
                             </dd>
                         </dl>
-                    ))}
+                    ))} */}
                 </ContentStyle>
             </Card>
             <Card>
