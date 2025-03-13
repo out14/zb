@@ -1,6 +1,7 @@
 import {TableCaption, TableStyle, TableWrap, WrapStyle} from "./Style";
 import {Select} from "../Select/Select";
 import {IColumn} from "./ListView.type";
+import styled from "styled-components";
 
 export function ListView<T>({
     columns=[],
@@ -34,6 +35,7 @@ export function ListView<T>({
                     </tr>
                 </thead>
                 <tbody>
+                    <TableMargin value={10} /> 
                     {data?.map((item,index)=>(
 
                         <tr key={index}>
@@ -41,11 +43,21 @@ export function ListView<T>({
                                 const value = item[e.key]
 
                                 return (
-                                    <td key={index} style={{textAlign:e.textAlign}}>
-                                        {
-                                            e.ellipsis? <div className="ellipsis">{value}</div>:
-                                                (e.render ? e.render(item, index) : value)
-                                        }
+                                    // <td key={index} style={{textAlign:e.textAlign}}>
+                                    //     {
+                                    //         e.ellipsis? <div className="ellipsis">{value}</div>:
+                                    //             (e.render ? e.render(item, index) : value)
+                                    //     }
+                                    // </td>
+                                    <td key={index} style={{ textAlign: e.textAlign || 'left' }}>
+                                        {e.ellipsis ? (
+                                            <div className="ellipsis">{value}</div>
+                                        ) : e.render ? (
+                                            e.render(item, index)
+                                            // e.render
+                                        ) : (
+                                            value
+                                        )}
                                     </td>
                                 )
                             })}
@@ -57,3 +69,7 @@ export function ListView<T>({
         </WrapStyle>
     );
 }
+
+const TableMargin = styled.tr<{ value: number }>`
+  height: ${(props) => props.value}px;
+`;

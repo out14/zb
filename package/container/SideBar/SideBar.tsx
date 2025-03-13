@@ -1,6 +1,7 @@
 import {Link,useNavigate} from "react-router-dom";
 import {Style} from "./style";
 import React, {useEffect} from "react";
+import DummyUser from "@/package/util/code/enum/code.dummyUser";
 
 export interface MenuProps {
     title: string | undefined;
@@ -10,17 +11,34 @@ export interface MenuProps {
 }
 
 export const SideBar = ({ menus }: { menus: MenuProps[]}) => {
-
-    console.log(menus,'메뉴')
-
+    
     return (
-            <Style>
+        <Style>
+            <div className="logo">
+                <Link to="/">LoaZB</Link>
+            </div>
+            <div className="sideBar--box">
                 <ul className="sideBar--list">
                     {menus.map((e) => (
                         <SidebarMenu key={e.link} props={e} />
                     ))}
                 </ul>
-            </Style>
+            </div>
+            <div className="sideBar--box">
+                <h3>추천 검색 캐릭터</h3>
+                <ul className="sideBar--list">
+                    {DummyUser.map((e,index)=>
+                        <li>
+                            <Link to={`armories/${e}`}>
+                                <strong className="sideBar--list--num">{index+1}</strong>
+                                {e}
+                            </Link>
+                        </li>
+                    )}
+                </ul>
+            </div>
+        </Style>
+
     );
 };
 

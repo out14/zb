@@ -1,5 +1,5 @@
 import {useController} from "@package/util";
-import {GuildListController} from "./GuildListController";
+import {GuildListController} from "../controller/GuildListController";
 import {ListView} from "@package/component";
 
 export const GuildList = () => {
@@ -10,12 +10,14 @@ export const GuildList = () => {
 
     return (
         <div>
-            <ListView
+
+            
+            {/* <ListView
                 columns={columns}
                 data={guild?.data}
                 state={state}
                 setState={setState}
-            />
+            /> */}
         </div>
     );
 };

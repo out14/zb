@@ -102,20 +102,22 @@ export const Event = () => {
                             id={`slide${idx}`}
                             data-label={idx}
                         >
-                           <div className="item--img">
-                               <img src={e.Thumbnail} alt=""/>
-                           </div>
-                           <div className="item--des">
-                               <div className="item--des--tit">
-                                   {e.Title}
-                               </div>
-                               <div className="item--des--date">
-                                   <span>진행기간</span> {dateFormat(e.StartDate)}~{e.EndDate?dateFormat(e.EndDate):'-'}
-                               </div>
-                               <div className="item--des--date">
-                                   <span>발표기간</span> {e.RewardDate?dateFormat(e.RewardDate):'-'}
-                               </div>
-                           </div>
+                            <a href={e.Link} target="_blank">
+                                <div className="item--img">
+                                <img src={e.Thumbnail} alt=""/>
+                                </div>
+                                <div className="item--des">
+                                    <div className="item--des--tit">
+                                        {e.Title}
+                                    </div>
+                                    <div className="item--des--date">
+                                        <span>진행기간</span> {dateFormat(e.StartDate)}~{e.EndDate?dateFormat(e.EndDate):'-'}
+                                    </div>
+                                    <div className="item--des--date">
+                                        <span>발표기간</span> {e.RewardDate?dateFormat(e.RewardDate):'-'}
+                                    </div>
+                                </div>
+                            </a>
                         </li>
                     ))}
                 </ul>

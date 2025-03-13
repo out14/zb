@@ -4,6 +4,7 @@ import {InforCard} from "@package/component/Card";
 import styled from "styled-components";
 import {Page} from "@package/component";
 import {Link} from "react-router-dom";
+import DummyUser from "@/package/util/code/enum/code.dummyUser";
 
 export const ArmoriesList = () => {
     const {recentlySearch}=useController(ArmoriesListController)
@@ -13,7 +14,7 @@ export const ArmoriesList = () => {
     return (
         <Page.Wrap>
             <Page.Contents>
-                <div className="title">최근 검색어</div>
+                <div className="title">최근 검색 캐릭터</div>
                     <ArmoriesListStyle>
                         {recentlySearch.length>0?(
                             <ul className="searchRecently">
@@ -31,21 +32,17 @@ export const ArmoriesList = () => {
                     </ArmoriesListStyle>
             </Page.Contents>
             <Page.Contents>
-                <div className="title">Hot 검색어</div>
+                <div className="title">추천 검색 캐릭터</div>
                 <ArmoriesListStyle>
-                    {recentlySearch.length>0?(
-                        <ul className="searchRecently">
-                            {recentlySearch.map((e)=>(
-                                <li>
-                                    <InforCard>
-                                        <Link to={`/armories/${e}`}>{e}</Link>
-                                    </InforCard>
-                                </li>
-                            ))}
-                        </ul>
-                    ):(
-                        <div className="searchEmpty"> 최근 검색 기록이 없습니다. </div>
-                    )}
+                    <ul className="searchRecently">
+                        {DummyUser.map((e)=>(
+                            <li>
+                                <InforCard>
+                                    <Link to={`/armories/${e}`}>{e}</Link>
+                                </InforCard>
+                            </li>
+                        ))}
+                    </ul>
                 </ArmoriesListStyle>
 
             </Page.Contents>

@@ -58,8 +58,22 @@ function ShdowButtonComponent(props:Button){
     )
 }
 
-export const Button = Object.assign(ButtonComponent,{
-    Shadow: ShdowButtonComponent
+function InShdowButtonComponent(props:Button){
+    return (
+        <Button
+            {...props}
+            style={{
+                boxShadow:'inset 0 2px 4px rgba(0,0,0,0.08)',
+            }}
+        >
+            {props.children}
+        </Button>
 
+    )
+}
+
+export const Button = Object.assign(ButtonComponent,{
+    Shadow: ShdowButtonComponent,
+    InShadow: InShdowButtonComponent
 })
 

@@ -7,7 +7,7 @@ export interface IColumn<T> {
     width?: number;
     ellipsis?: boolean;
     suffix?: string;
-    render?: (e: T, index: number) => ReactNode;
+    render?: (e: T, index: number) => ReactNode|HTMLElement;
     required?: boolean;
     parentTitle?: string;
     type?: 'money' | 'phone';

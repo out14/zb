@@ -17,7 +17,16 @@ export const TableStyle = styled.table`
     table-layout:fixed;
     thead{
         th{
-            padding:15px 10px;
+            padding:25px 10px;
+            background:var(--white-color);
+            &:first-child{
+                border-top-left-radius:10px;
+                border-bottom-left-radius:10px;
+            }
+            &:last-child{
+                border-top-right-radius:10px;
+                border-bottom-right-radius:10px;
+            }
         }
     }
     tbody{
@@ -44,6 +53,9 @@ export const TableStyle = styled.table`
                     overflow:hidden;
                     text-overflow:ellipsis;
                     white-space:nowrap;
+                }
+                a{
+                    color:var(--txt-colorA);
                 }
             }
             

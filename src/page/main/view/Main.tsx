@@ -1,5 +1,5 @@
 import {Card} from "@package/component/Card/Card";
-import {Schedule, Content, Event} from "@src/page/main/view";
+import {Schedule, Content, Event, Notice} from "@src/page/main/view";
 import {Page} from "@package/component";
 
 export const Main = () => {
@@ -19,9 +19,14 @@ export const Main = () => {
             </Page.Contents>
             */}
             <Page.Contents>
+                <div className="title">새소식</div>
+                <Notice/>
+
+            </Page.Contents>
+            {/* <Page.Contents>
                 <div className="title">일정</div>
                 <Schedule/>
-            </Page.Contents>
+            </Page.Contents> */}
 
         </Page.Wrap>
     );

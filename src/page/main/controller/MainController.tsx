@@ -2,8 +2,9 @@ import { useSuspenseQuery, useQuery } from '@tanstack/react-query';
 import noticeApi from "@package/api/api.notice";
 import {contentApi} from "@package/api";
 import {useContext} from "react";
-import {ModalContext} from "@package/util";
+import {dateFormat, ModalContext} from "@package/util";
 import {ModalContent} from "@src/page/main";
+import { IColumn } from '@/package/component';
 
 
 
@@ -13,6 +14,16 @@ export const MainController = () => {
 
     const {data:eventData }=useSuspenseQuery({
         queryFn: async ()=> await noticeApi.eventList() ?? 'error' ,
+        queryKey:["type"]
+    })
+
+    const {data:noticeData }=useSuspenseQuery({
+        queryFn: async ()=> await noticeApi.noticeList() ?? 'error' ,
+        queryKey:["type"]
+    })
+
+    const {data:alarmsData }=useSuspenseQuery({
+        queryFn: async ()=> await noticeApi.alarmsList() ?? 'error' ,
         queryKey:["type"]
     })
 
@@ -30,6 +41,24 @@ export const MainController = () => {
         queryFn:async ()=> await contentApi.calendar() ??'error',
         queryKey:["calendar"]
     })
+
+    const columns: IColumn<any>[] = [
+        {
+            key:'Title',
+            title:'제목',
+            render:(e)=> <a href={e.Link}>{e.Title}</a>,
+        },
+        {
+            key:'StartDate',
+            title:'이벤트 기간',
+            width:240,
+            render:(e)=> <div>
+                {dateFormat(e.StartDate)} ~ {dateFormat(e.EndDate)}</div>
+
+        }
+       
+    ]
+
 
     const handleModal = async (data:T) =>{
         await newModal({
@@ -52,11 +81,14 @@ export const MainController = () => {
 
     return {
         eventData,
+        noticeData,
+        alarmsData,
         // cadData,
         // cgrData,
         calendarData,
         copySchedule,
-        handleModal
+        handleModal,
+        columns
     };
 };
 

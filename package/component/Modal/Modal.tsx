@@ -50,7 +50,7 @@ const ModalStyle = styled.div`
     }
 `
 const ModalCnt = styled.div`
-    min-width:500px;
+    min-width:300px;
     padding:20px;
     background:var(--background-color);
     z-index:2;

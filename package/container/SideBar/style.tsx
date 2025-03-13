@@ -4,22 +4,68 @@ import {ThemeContext} from "../../util/theme/theme";
 import { Link } from "react-router-dom";
 
 const SideBarStyle = styled.div<{mode:string}>`
-    .logo{
-        margin-bottom:20px;
-    }
+    
     .side{
-        background:var(--sideBar-color);
-        padding:20px;
-        box-sizing:border-box;
-        width:250px;
-        border-radius:10px;
-        box-shadow:0px 10px 10px rgba(0,0,0,0.07);
+        display:flex;
+        flex-direction:column;
+        gap:20px;
     }
     .sideBar{
+        &--box{
+            background:var(--sideBar-color);
+            padding:20px;
+            box-sizing:border-box;
+            width:250px;
+            border-radius:10px;
+            box-shadow:0px 10px 10px rgba(0,0,0,0.07);
+            h3{
+                font-size:16px;
+                margin-bottom:15px;
+            }
+        }
         &--list{
             display:flex;
             flex-direction:column;
             gap:5px;
+            a{
+                display:flex;
+                align-items:center;
+                vertical-align:bottom;
+                color:var(--txt-colorA);
+                font-size:14px;
+                line-height:1.3;
+            }
+            &--num{
+                width:16px;
+                height:16px;
+                display:block;
+                text-align:center;
+                border-radius:50%;
+                font-size:12px;
+                line-height:16px;
+                margin-right:5px;
+                color:var(--txt-colorA);
+            }
+            li {
+                &:nth-child(1){
+                    .sideBar--list--num{ 
+                        background:#ffbd1b;
+                        color:#fff;
+                    }
+                }  
+                &:nth-child(2){
+                    .sideBar--list--num{ 
+                        background:#c0c0c0;
+                        color:#fff;
+                    }
+                }
+                &:nth-child(3){
+                    .sideBar--list--num{ 
+                        background:#6f4f28;
+                        color:#fff;
+                    }
+                }
+            }
         }
         &--item{
             button{
@@ -81,9 +127,7 @@ export const Style = ({children}:{children:ReactNode}) => {
 
 
         <SideBarStyle mode={style}>
-            <div className="logo">
-                <Link to="/">HOME</Link>
-            </div>
+            
             <div className="side">
                 {children}
             </div>

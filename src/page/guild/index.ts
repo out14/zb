@@ -1,2 +1,2 @@
-export * from './list/GuildListController'
-export * from './list/GuildList'
+export * from './list/controller/GuildListController'
+export * from './list/view/GuildList'

@@ -1,66 +1,62 @@
 import React from 'react';
+import { Equip,Ark  } from '@/package/util';
+import ItemGrade from '@/package/util/code/enum/code.grade'
+import { Block } from '@/package/component';
 import styled from 'styled-components';
 
-export const AvatarView = ({data}:{data?:any}) => {
-
-    console.log(data,'ㅔㅔㅔ')
-
+export const AvatarView = ({
+    dataAvatar,
+}:{
+    dataAvatar?:any[],
+}) => {
+    const Order = ['무기 아바타','머리 아바타','상의 아바타','하의 아바타','얼굴1 아바타','얼굴2 아바타','악기 아바타','이동 효과']
+    const DataSort = dataAvatar?.sort((a, b) => {
+        const indexA = Order.indexOf(a.Type);
+        const indexB = Order.indexOf(b.Type);
+        return indexA - indexB;
+      });
+    const IsInner = DataSort?.filter((e)=>e.IsInner)
+    const IsNotInner = DataSort?.filter((e)=>!e.IsInner)
+    
     return (
-        <AvatarViewStyle>
-            <div className="avatarImg">
-                <img src={data?.CharacterImage} alt="" />    
-            </div>          
-            <div className="avatarInfo">
-                <ul>
-                    <li>서버 : {data?.ServerName}</li>
-                    <li>원정대 레벨 : {data?.ExpeditionLevel}</li>
-                    <li>아이템 레벨 : {data?.ItemAvgLevel}</li>
-                    <li>길드 : {data?.GuildName} &lt; {data?.GuildMemberGrade} &gt; </li>
-                    <li>pvp : {data?.PvpGradeName}</li>
+        <>
+            <List>
+                <Col>
                     
-                </ul>
-            </div>
-        </AvatarViewStyle>
+                    {IsInner?.map((e) => {
+                        const gradeColor = ItemGrade?.find((i) => i[e.Grade])?.[e.Grade] || "#fff";
+                        return <Block data={e} imgBg={gradeColor} />;
+                    })}    
+                </Col>
+                <Col>
+                    
+                    {IsNotInner?.map((e) => {
+                        const gradeColor = ItemGrade?.find((i) => i[e.Grade])?.[e.Grade] || "#fff";
+                        return <Block data={e} imgBg={gradeColor} />;
+                    })}    
+                </Col>
+            </List>
+        </>
     );
 };
 
-const AvatarViewStyle = styled.div`
-    width:100%;
-    //background:rgb(22,24,29);
-    background:var(--white-color);
-    border-radius:10px;
-    position:relative;
-    .avatar{
-        &Img{
-            width:400px;
-            min-height:500px;
-            height:100%;
-            background:rgb(22,24,29);
-            border-radius:10px;
-            overflow:hidden;
-            box-sizing:border-box;
-            mask-image: linear-gradient(90deg, rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0) 100%);
-            img{
-                width:100%;
-                // mask-image: linear-gradient(90deg, rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0) 90%);
-            }
-        }
-        &Info{
-            position:absolute;
-            bottom:5%;
-            left:20px;
-            // width:90%;
-            width:35%;
-            padding:10px;
-            box-sizing:border-box;
-            background:var(--white-color);
-            border-radius:10px;
-            ul{
-                li{
-                    line-height:1.4;
-                }
-            }
-        }    
-    }
 
+const List = styled.div`
+    
+    width:95%;
+    margin-right:auto;
+    display:flex;
+    align-items:flex-start;
+    justify-content:flex-start;
+    // flex:1;
+    gap:10px;
+
+`
+
+const Col= styled.div`
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    width:100%;
+    
 `

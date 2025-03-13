@@ -1,10 +1,11 @@
 
-import {GuildList, GuildListController} from "@src/page/guild";
-import {AuctionList} from "@src/page/auction/list/view/AuctionList";
-import {AuctionListController} from "@src/page/auction/list/controller/AuctionListController";
+// import {GuildList, GuildListController} from "@src/page/guild";
+// import {AuctionList} from "@src/page/auction/list/view/AuctionList";
+// import {AuctionListController} from "@src/page/auction/list/controller/AuctionListController";
 import {Main,MainController} from "@src/page/main";
 import {ArmoriesList, ArmoriesListController} from "@src/page/armories/list";
 import {ArmoriesView, ArmoriesViewController} from "@src/page/armories/view";
+import { Event, EventController } from '@src/page/event';
 // import {IRouter} from "./RouterController";
 
 export const routes=[
@@ -29,24 +30,26 @@ export const routes=[
                 controller: ArmoriesViewController,
             }
         ]
-    },{
-        path: 'auction',
-        title: '메뉴2',
-        element: <AuctionList/>,
-        controller: AuctionListController,
-        /*children:[
-            {
-                path: 'list',
-                title: '경매 리스트',
-                element: <AuctionList/>,
-                controller: AuctionListController,
-            },
-        ]*/
-    },{
-        path: 'guild',
-        title: '메뉴3',
-        element: <GuildList/>,
-        controller: GuildListController,
+    },
+    // {
+    //     path: 'auction',
+    //     title: '메뉴2',
+    //     element: <AuctionList/>,
+    //     controller: AuctionListController,
+    //     /*children:[
+    //         {
+    //             path: 'list',
+    //             title: '경매 리스트',
+    //             element: <AuctionList/>,
+    //             controller: AuctionListController,
+    //         },
+    //     ]*/
+    // },
+    {
+        path: 'event',
+        title: '이벤트',
+        element: <Event/>,
+        controller: EventController,
         /*children:[
             {
                 path: 'list',

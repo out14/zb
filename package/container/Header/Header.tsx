@@ -18,7 +18,7 @@ export const Header = () => {
     return (
         <Style>
             <SearchBar/>
-
+            {/*  
             <Button.Shadow onClick={()=>console.log()}>
                 <Icon
                     image={'user'}
@@ -27,6 +27,7 @@ export const Header = () => {
                     color={style==='light'?'var(--primary-color)':'var(--txt-colorA)'}
                 />
             </Button.Shadow>
+            */}
             <Button.Shadow onClick={handleTheme}>
                 <Icon
                     image={'sun'}
@@ -98,6 +99,7 @@ const SearchBar = ()=>{
                     onFocus={()=>setDropDown(true)}
                     onKeyPress={handleSearch}
                     width={'calc(100% - 30px)'}
+                    placeholder="캐릭터 명을 입력해주세요."
                     btn={
                     <Icon
                         onClick={handleSearch}

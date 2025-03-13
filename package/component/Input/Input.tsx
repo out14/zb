@@ -10,13 +10,15 @@ export const Input = ({
     onChange,
     onBlur,
     onFocus,
-    onKeyPress
+    onKeyPress,
+    placeholder
 }:{
     btn?:null|ReactNode
     height?:string
     width?:string
     background?:string
-    value?:string
+    value?:string,
+    placeholder?:string,
     onChange?:(e:string)=>void,
     onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
     onFocus?: (e: React.FocusEvent<HTMLInputElement>) => void;
@@ -48,6 +50,7 @@ export const Input = ({
                onKeyUp={handleKeyPress}
                onBlur={onBlur}
                onFocus={onFocus}
+               placeholder={placeholder}
             />
             {btn&&btn}
         </InputStyle>

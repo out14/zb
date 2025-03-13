@@ -14,6 +14,12 @@ class NoticeApi{
         return res?.data
     }
 
+    async alarmsList(){
+        const res = await axios.get('/news/alarms')
+
+        return res?.data
+    }
+
 
 }
 
