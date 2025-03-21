@@ -2,6 +2,7 @@ import {Link,useNavigate} from "react-router-dom";
 import {Style} from "./style";
 import React, {useEffect} from "react";
 import DummyUser from "@/package/util/code/enum/code.dummyUser";
+import Logo from "@/package/assets/images/common/loaZ-logo.png"
 
 export interface MenuProps {
     title: string | undefined;
@@ -12,10 +13,13 @@ export interface MenuProps {
 
 export const SideBar = ({ menus }: { menus: MenuProps[]}) => {
     
+    
     return (
         <Style>
             <div className="logo">
-                <Link to="/">LoaZB</Link>
+                <Link to="/">
+                    <img src={Logo} alt="로고" />
+                </Link>
             </div>
             <div className="sideBar--box">
                 <ul className="sideBar--list">

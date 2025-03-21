@@ -4,7 +4,15 @@ import {ThemeContext} from "../../util/theme/theme";
 import { Link } from "react-router-dom";
 
 const SideBarStyle = styled.div<{mode:string}>`
-    
+    .logo{ 
+        width:120px;
+        a{
+            display:block;
+            img{
+                width:100%;
+            }
+        }
+    }
     .side{
         display:flex;
         flex-direction:column;
@@ -15,7 +23,7 @@ const SideBarStyle = styled.div<{mode:string}>`
             background:var(--sideBar-color);
             padding:20px;
             box-sizing:border-box;
-            width:250px;
+            width:200px;
             border-radius:10px;
             box-shadow:0px 10px 10px rgba(0,0,0,0.07);
             h3{
