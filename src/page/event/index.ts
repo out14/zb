@@ -1,2 +1,2 @@
 export * from './view/Event'
-export * from './controller/eventController'
+export * from './controller/EventController'
