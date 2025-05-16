@@ -1,4 +1,4 @@
-import { useSuspenseQuery, useQuery } from '@tanstack/react-query';
+import { useSuspenseQuery, } from '@tanstack/react-query';
 import noticeApi from "@package/api/api.notice";
 import {contentApi} from "@package/api";
 import {useContext} from "react";
@@ -60,7 +60,7 @@ export const MainController = () => {
     ]
 
 
-    const handleModal = async (data:T) =>{
+    const handleModal = async (data:any ) =>{
         await newModal({
             props:{
                 // title:data.Name,
@@ -74,7 +74,7 @@ export const MainController = () => {
     }
 
     // const copySchedule = JSON.parse(JSON.stringify([...calendarData])) as ICategory[]
-    const copySchedule = JSON.parse(JSON.stringify([...calendarData]))?.map( (e)=>({
+    const copySchedule = JSON.parse(JSON.stringify([...calendarData]))?.map( ({e}:{e:any})=>({
         ...e,
         StartDay:e?.StartTimes? e?.StartTimes[0] : ''
     } ))

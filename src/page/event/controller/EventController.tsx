@@ -2,7 +2,6 @@ import noticeApi from '@/package/api/api.notice';
 import { IColumn } from '@/package/component/ListView/ListView.type';
 import { dateFormat } from '@/package/util';
 import { useSuspenseQuery } from '@tanstack/react-query';
-import React from 'react';
 
 export const EventController = () => {
 

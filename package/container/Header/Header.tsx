@@ -1,4 +1,4 @@
-import {useContext,  useState} from 'react';
+import {SetStateAction, useContext,  useState} from 'react';
 import {Style} from "./style";
 import {Button, Icon, Input} from "../../component";
 import {ThemeContext} from "../../util/theme/theme";
@@ -63,7 +63,7 @@ const SearchBar = ()=>{
         navigate(`/armories/${keyWord}`)
     }
 
-    const handleMove =(e)=>{
+    const handleMove =(e: SetStateAction<string>)=>{
         setKeyWord(e)
         setDropDown(false)
         navigate(`/armories/${e}`)
@@ -74,6 +74,7 @@ const SearchBar = ()=>{
             dropDownList.filter((i)=>i!==e)
         )
         SearchHistoryController.delHistory(e)
+        
     }
 
     const handleClear = () =>{

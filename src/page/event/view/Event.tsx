@@ -1,6 +1,5 @@
 import { ListView } from '@/package/component';
 import { useController } from '@/package/util';
-import React from 'react';
 import { EventController } from '@src/page/event/controller/EventController';
 
 export const Event = () => {

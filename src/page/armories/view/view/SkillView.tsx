@@ -1,5 +1,5 @@
-import React from 'react';
-import { Equip,Ark  } from '@/package/util';
+// import React from 'react';
+// import { Equip,Ark  } from '@/package/util';
 import ItemGrade from '@/package/util/code/enum/code.grade'
 import { Block } from '@/package/component';
 import styled from 'styled-components';

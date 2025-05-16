@@ -4,26 +4,30 @@ import {MainController} from "@src/page/main";
 import Calendar from 'react-calendar';
 import styled from "styled-components";
 import dayjs from "dayjs";
-import moment from "moment";
+//import moment from "moment";
 // import 'react-calendar/dist/Calendar.css';
 
 
 
 export const Schedule = () => {
 
-    const { calendarData, copySchedule } = useController(MainController)
+    const { 
+        // calendarData, 
+        copySchedule } = useController(MainController)
 
-    const [value, onChange] = useState(new Date());
+    const [value, 
+        // onChange
+    ] = useState(new Date());
 
-    const thisMonth = moment().format("MMMM");
+    //const thisMonth = moment().format("MMMM");
 
 
     return (
         <CalendarStyle>
             
             <Calendar
-                formatDay={(locale, date) => dayjs(date).format('DD')}
-                onChange={onChange}
+                formatDay={( date) => dayjs(date).format('DD')}
+                //onChange={onChange}
                 value={value}
                 tileContent={
                     (date)=>{

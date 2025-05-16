@@ -1,7 +1,7 @@
 import {characterApi} from "@package/api";
-import {armoriesApi} from "@package/api";
+//import {armoriesApi} from "@package/api";
 import { useParams } from 'react-router-dom';
-import {useQuery, useSuspenseQuery} from "@tanstack/react-query";
+import {useQuery} from "@tanstack/react-query";
 
 export const ArmoriesViewController = () => {
 

@@ -1,5 +1,7 @@
 import {Card} from "@package/component/Card/Card";
-import {Schedule, Content, Event, Notice} from "@src/page/main/view";
+import {
+    // Schedule, Content,
+     Event, Notice} from "@src/page/main/view";
 import {Page} from "@package/component";
 
 export const Main = () => {

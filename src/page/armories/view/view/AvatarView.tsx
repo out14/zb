@@ -1,5 +1,5 @@
-import React from 'react';
-import { Equip,Ark  } from '@/package/util';
+//import React from 'react';
+import { TypeGrade  } from '@/package/util';
 import ItemGrade from '@/package/util/code/enum/code.grade'
 import { Block } from '@/package/component';
 import styled from 'styled-components';
@@ -24,14 +24,14 @@ export const AvatarView = ({
                 <Col>
                     
                     {IsInner?.map((e) => {
-                        const gradeColor = ItemGrade?.find((i) => i[e.Grade])?.[e.Grade] || "#fff";
+                        const gradeColor = ItemGrade?.find(({i}:{i:TypeGrade}) => i[e.Grade])?.[e.Grade] || "#fff";
                         return <Block data={e} imgBg={gradeColor} />;
                     })}    
                 </Col>
                 <Col>
                     
                     {IsNotInner?.map((e) => {
-                        const gradeColor = ItemGrade?.find((i) => i[e.Grade])?.[e.Grade] || "#fff";
+                        const gradeColor = ItemGrade?.find(({i}:{i:TypeGrade}) => i[e.Grade])?.[e.Grade] || "#fff";
                         return <Block data={e} imgBg={gradeColor} />;
                     })}    
                 </Col>

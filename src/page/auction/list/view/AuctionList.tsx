@@ -1,6 +1,6 @@
 import {useController} from "@package/util";
 import {AuctionListController} from "../controller/AuctionListController";
-import styled from "styled-components";
+// import styled from "styled-components";
 
 
 interface item{
@@ -64,7 +64,7 @@ export const AuctionList = () => {
 
 function MakeList({data}:{data:item[]}){
 
-
+    console.log(data)
     return  ( 
        <div></div>
     )

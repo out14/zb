@@ -1,4 +1,4 @@
-import React,{useEffect, useState} from 'react';
+import { useState} from 'react';
 import {useController} from "@package/util";
 import {ArmoriesViewController} from "../controller/ArmoriesViewController";
 import { InforView, CharacterView, AvatarView, SkillView } from '.';
@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import { Button } from '@/package/component';
 import { Card } from '@package/component/Card/Card';
 import ItemGrade from '@/package/util/code/enum/code.grade';
-import { filter } from '../../../../../node_modules/rxjs/src/internal/operators/filter';
+// import { filter } from '../../../../../node_modules/rxjs/src/internal/operators/filter';
 
 
 export const ArmoriesView = () => {
@@ -27,6 +27,8 @@ const IsData =({allData,id}:{allData:any, id:any})=>{
     }
     const ArkTab = [ '깨달음','진화','도약' ]
     const dataArkPassive = allData?.ArkPassive
+
+    console.log('?',ItemGrade)
 
     return (
         <div>

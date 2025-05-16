@@ -18,7 +18,7 @@ export const ArmoriesList = () => {
                     <ArmoriesListStyle>
                         {recentlySearch.length>0?(
                             <ul className="searchRecently">
-                                {recentlySearch.map((e)=>(
+                                {recentlySearch.map(({e}:{e:any})=>(
                                     <li>
                                         <InforCard>
                                             <Link to={`/armories/${e}`}>{e}</Link>

@@ -1,4 +1,15 @@
- const ItemGrade = [
+
+interface typeGrade {
+    "고대"?:string,
+    "유물"?:string,
+    "전설"?:string,
+    "영웅"?:string,
+    "희귀"?:string,
+    "고급"?:string,
+    "일반"?:string
+}
+
+const ItemGrade:typeGrade[] = [
     {"고대":"var(--grade6)"},
     {"유물":"var(--grade5)"},
     {"전설":"var(--grade4)"},

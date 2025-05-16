@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { Equip } from '../../util/type/type';
-import ItemGrade from '@/package/util/code/enum/code.grade';
+// import ItemGrade from '@/package/util/code/enum/code.grade';
 import styled from 'styled-components';
 import Modal from '../Modal/Modal';
-import cx from 'classnames';
+// import cx from 'classnames';
 import { Bar } from '../QualityBar';
 
 export const Block = ({data,imgBg}:{data:Equip,imgBg:string}) => {
@@ -294,19 +294,19 @@ const Txt = styled.div`
     }
 `
 
-const Pop = styled.div`
-    border-radius:10px;
-    overflow:hidden;
-    padding:5px;
-    box-sizing:border-box;
-    box-shadow:inset rgba(0, 0, 0, 0.08) 0px 5px 10px;
-    position:absolute;
-    top:50px;
-    left:0;
-    z-index:2;
-    background:#fff;
-    // display:none;
-`
+// const Pop = styled.div`
+//     border-radius:10px;
+//     overflow:hidden;
+//     padding:5px;
+//     box-sizing:border-box;
+//     box-shadow:inset rgba(0, 0, 0, 0.08) 0px 5px 10px;
+//     position:absolute;
+//     top:50px;
+//     left:0;
+//     z-index:2;
+//     background:#fff;
+//     // display:none;
+// `
 
 const ModalCnt = styled.div`
     text-align:left;

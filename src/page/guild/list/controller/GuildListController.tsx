@@ -2,7 +2,7 @@ import {useQuery} from "@tanstack/react-query";
 import {guildsApi} from "@package/api";
 import {IColumn} from "@package/component/ListView/ListView.type";
 import {dateFormat} from "@package/util";
-import {useState} from "react";
+//import {useState} from "react";
 import {useSearchState} from "@package/hook";
 
 interface GuildColumn {
@@ -19,7 +19,7 @@ interface GuildColumn {
 export const GuildListController = () => {
 
     const [ state,setState ] = useSearchState({
-        schSelect:''
+        defaultState:''
 
     })
     const { data:guild } = useQuery({

@@ -3,7 +3,7 @@ import {useState} from "react";
 export function useSearchState<T>({
     defaultState={} as T
 }:{
-    defaultState
+    defaultState:any
 }){
 
     const [state, setState]=useState<

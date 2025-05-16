@@ -36,32 +36,31 @@ export function ListView<T>({
                 </thead>
                 <tbody>
                     <TableMargin value={10} /> 
-                    {data?.map((item,index)=>(
+                    {data?.map((item, index) => (
+                    <tr key={index}>
+                        {columns.map((e, colIndex) => {
+                        const value = item[e.key];
 
-                        <tr key={index}>
-                            {columns.map((e, index) =>{
-                                const value = item[e.key]
+                        // value 가 ReactNode가 아니면 string으로 fallback
+                        const renderValue =
+                            value instanceof HTMLElement || value instanceof Element
+                            ? value.textContent
+                            : (value as React.ReactNode);
 
-                                return (
-                                    // <td key={index} style={{textAlign:e.textAlign}}>
-                                    //     {
-                                    //         e.ellipsis? <div className="ellipsis">{value}</div>:
-                                    //             (e.render ? e.render(item, index) : value)
-                                    //     }
-                                    // </td>
-                                    <td key={index} style={{ textAlign: e.textAlign || 'left' }}>
-                                        {e.ellipsis ? (
-                                            <div className="ellipsis">{value}</div>
-                                        ) : e.render ? (
-                                            e.render(item, index)
-                                            // e.render
-                                        ) : (
-                                            value
-                                        )}
-                                    </td>
-                                )
-                            })}
-                        </tr>
+                        return (
+                            <td key={colIndex} style={{ textAlign: e.textAlign || 'left' }}>
+                            {/* {e.ellipsis ? (
+                                <div className="ellipsis">{renderValue}</div>
+                            ) : e.render ? (
+                                e.render(item, index)
+                            ) : (
+                                renderValue
+                            )} */}
+                            <div className="ellipsis">{renderValue}</div>
+                            </td>
+                        );
+                        })}
+                    </tr>
                     ))}
                 </tbody>
             </TableStyle>

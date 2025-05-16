@@ -1,12 +1,12 @@
-import {useController} from "@package/util";
-import {GuildListController} from "../controller/GuildListController";
-import {ListView} from "@package/component";
+//import {useController} from "@package/util";
+//import {GuildListController} from "../controller/GuildListController";
+//import {ListView} from "@package/component";
 
 export const GuildList = () => {
 
-    const { guild,columns,state,setState } = useController(GuildListController)
+    //const { guild,columns,state,setState } = useController(GuildListController)
 
-    console.log(guild?.data)
+    //console.log(guild?.data)
 
     return (
         <div>

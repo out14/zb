@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { Equip,Ark  } from '@/package/util';
 import ItemGrade from '@/package/util/code/enum/code.grade'
 import { Block } from '@/package/component';
@@ -7,7 +7,7 @@ import styled from 'styled-components';
 
 export const InforView = ({
     dataEquip,
-    dataArkPassive
+    // dataArkPassive
 }:{
     dataEquip?:Equip[],
     dataArkPassive?:Ark
@@ -61,17 +61,17 @@ const Col= styled.div`
     width:100%;
     
 `
-const ArkView = styled.div`
-    display:flex;
-    align-items:flex-start;
-    flex:1;
-    justify-content:space-between;
-    width:100%;
-    margin-top:20px;
-    dl{
+// const ArkView = styled.div`
+//     display:flex;
+//     align-items:flex-start;
+//     flex:1;
+//     justify-content:space-between;
+//     width:100%;
+//     margin-top:20px;
+//     dl{
         
-        display:flex;
-        flex-direction:column;
-        gap:4px;
-    }
-`
+//         display:flex;
+//         flex-direction:column;
+//         gap:4px;
+//     }
+// `

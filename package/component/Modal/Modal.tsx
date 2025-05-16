@@ -11,7 +11,7 @@ interface Modal {
 }
 
 const Modal = ({
-    onClick,
+    //onClick,
     onClose,
     // color,
     // background='var(--white-color)',

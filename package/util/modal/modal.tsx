@@ -19,9 +19,9 @@ export const ModalContext = createContext<{
     confirm: () => void;
     newModal: ({
            props,
-           index,
+           //index,
            onClose,
-           defaultLayout,
+           //defaultLayout,
        }: {
             props: IDialogProps;
             onClose?: () => void;

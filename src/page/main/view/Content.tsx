@@ -1,5 +1,7 @@
-import React from 'react';
-import {dateFormat, useController} from "@package/util";
+//import React from 'react';
+import {
+    // dateFormat, 
+    useController} from "@package/util";
 import {MainController} from "@src/page/main";
 import {Card} from "@package/component/Card/Card";
 import styled from "styled-components";
@@ -49,7 +51,8 @@ export const Content = () => {
 
     const {
         //cadData,cgrData,
-        handleModal}=useController(MainController)
+        // handleModal
+    }=useController(MainController)
 
     // console.log(cadData,'cadData')
     // console.log(cgrData,'cgrData')

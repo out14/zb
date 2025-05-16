@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import {ReactNode, useContext} from "react";
 import {ThemeContext} from "../../util/theme/theme";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 
 const SideBarStyle = styled.div<{mode:string}>`
     .logo{ 

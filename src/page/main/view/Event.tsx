@@ -23,7 +23,8 @@ export const Event = () => {
 
     // if(!noticeData) return 
 
-    const slideRef = useRef(null)
+    // const slideRef = useRef(null)
+    const slideRef = useRef<HTMLDivElement>(null);
 
     const [ count,setCount ]=useState(0)
 
