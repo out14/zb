@@ -1,13 +1,16 @@
-const path = require("path");
+
 const express = require("express");
+const path = require("path");
 const app = express();
 const port = process.env.PORT || 8001;
 
-app.use(express.static(path.join(__dirname, '/dist')));
+app.use(express.static(path.join(__dirname, 'dist')));
 
-
-
+// 모든 경로 index.html로 처리 (SPA)
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'dist/index.html'));
-  });
+  res.sendFile(path.join(__dirname, 'dist/index.html'));
+});
 
+app.listen(port, () => {
+  console.log(`✅ Server is running on http://localhost:${port}`);
+});
