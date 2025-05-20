@@ -24,7 +24,7 @@ export const Event = () => {
     // if(!noticeData) return 
 
     // const slideRef = useRef(null)
-    const slideRef = useRef<HTMLDivElement>(null);
+    const slideRef = useRef<HTMLUListElement>(null);
 
     const [ count,setCount ]=useState(0)
 

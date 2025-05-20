@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import { Button } from '@/package/component';
 import { Card } from '@package/component/Card/Card';
 import ItemGrade from '@/package/util/code/enum/code.grade';
+import {ArkPassiveEffect} from '@/package/util/type/type'
 // import { filter } from '../../../../../node_modules/rxjs/src/internal/operators/filter';
 
 
@@ -93,10 +94,11 @@ const IsData =({allData,id}:{allData:any, id:any})=>{
                             {allData?.ArmoryGem?.Gems ? 
                                 allData?.ArmoryGem?.Gems.map((e: { Icon: string; Grade: string; Level: number; Slot: number }) => {
                                 // Gem의 등급 색상 가져오기
-                                const gradeColor = ItemGrade?.find((i) => i[e.Grade])?.[e.Grade] || "#fff";
+                                //const gradeColor = ItemGrade?.find((i) => i[e.Grade])?.[e.Grade] || "#fff";
+                                const gradeColor = ItemGrade[e.Grade] || "#fff";
 
                                 // Slot에 해당하는 Skill 정보 찾기
-                                const skillInfo = allData?.ArmoryGem?.Effects?.Skills?.find((i) => i.GemSlot === e.Slot);
+                                const skillInfo = allData?.ArmoryGem?.Effects?.Skills?.find((i:{Name:string,Option:string,Description:string[],GemSlot:number,Tooltip:string }) => i.GemSlot === e.Slot);
 
                                     return (
                                         <li key={e.Slot}>
@@ -167,7 +169,7 @@ const IsData =({allData,id}:{allData:any, id:any})=>{
                         <div className="moreInfo--card">
                             {allData?.ArmoryEngraving?.ArkPassiveEffects?.map((e:{Grade:number,Name:string,Level:number})=>
                                 <dl>
-                                    <dt style={{background:ItemGrade.find((i) => i[e.Grade])?.[e.Grade] || "#fff"}}>{e.Level}</dt>
+                                    <dt style={{background:ItemGrade[e.Grade] || "#fff"}}>{e.Level}</dt>
                                     <dd> {e.Name}</dd>
                                 </dl>
                             )}
@@ -194,9 +196,9 @@ const IsData =({allData,id}:{allData:any, id:any})=>{
                                 {ArkTab.map((w)=>
                                     <dl>
                                         <dt>{w}</dt>
-                                        {dataArkPassive?.Effects.filter((e)=>e.Name===w).map((i,index)=>
+                                        {dataArkPassive?.Effects.filter((e:ArkPassiveEffect)=>e.Name===w).map((i:ArkPassiveEffect,index:number)=>
                                             {
-                                                const realizeData = dataArkPassive?.Effects.filter((e)=>e.Name===w)[index].Description ||'';
+                                                const realizeData = dataArkPassive?.Effects.filter((e:ArkPassiveEffect)=>e.Name===w)[index].Description ||'';
 
                                                 const removeElement = (html: string, targetText: string) => {
                                                     const parser = new DOMParser();

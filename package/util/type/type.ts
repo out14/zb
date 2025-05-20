@@ -37,6 +37,22 @@ export interface Ark{
     }[]
 }
 
+export interface ArkPassiveEffect{
+    Description: string,
+    Icon: string
+    Name: string,
+    ToolTip: string,
+}
+export interface ArkPassive{
+    Effects: ArkPassiveEffect
+    IsArkPassive: boolean
+    Points:{
+        Name: string, 
+        Value: number, 
+        Tooltip: string
+    }[]
+}
+
 export interface TypeGrade {
     "고대"?:string,
     "유물"?:string,

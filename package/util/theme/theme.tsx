@@ -3,7 +3,7 @@ import {ThemeController} from "../../store";
 
 export const ThemeContext = createContext({
     style:'',
-    setStyleHandler: (style:string)=>{ }
+    setStyleHandler: (_style:string)=>{ }
     // setStyleHandler: ()=>{}
 })
 
@@ -18,11 +18,11 @@ export const ThemeContextProvider = ({children}:{children:ReactNode}) => {
     const setStyleHandler = (style:string) => {
         if(style==='light'){
             setStyle('dark')
-            ThemeController.change('dark')
+            ThemeController.change({color: 'dark'})
             document.body.className='dark'
         }else{
             setStyle('light')
-            ThemeController.change('light')
+            ThemeController.change({color: 'light'})
             document.body.className='light'
         }
     }

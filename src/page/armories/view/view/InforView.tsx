@@ -24,14 +24,14 @@ export const InforView = ({
                 <Col>
                     {/* {EqList?.map((e=><Block data={e} imgBg={e.Grade==="고대"? "var(--grade5)":"var(--grade4)"}/> )) } */}
                     {EqList?.map((e) => {
-                        const gradeColor = ItemGrade.find((i) => i[e.Grade])?.[e.Grade] || "#fff";
+                        const gradeColor = ItemGrade[e.Grade] || "#fff";
                         return <Block data={e} imgBg={gradeColor} />;
                     })}   
                 </Col>
                 <Col>
                     {/* {AccList?.map((e=><Block data={e} imgBg={e.Grade==="고대"? "var(--grade5)":"var(--grade4)"}/> )) }          */}
                     {AccList?.map((e) => {
-                        const gradeColor = ItemGrade.find((i) => i[e.Grade])?.[e.Grade] || "#fff";
+                        const gradeColor = ItemGrade[e.Grade] || "#fff";
                         return <Block data={e} imgBg={gradeColor} />;
                     })}   
                 </Col>  

@@ -4,7 +4,7 @@ export class ThemeController {
         return theme
     }
 
-    static change({color}:{color:any}){
+    static change({color}:{color:string}){
         localStorage.setItem('COLOR',color)
     }
 }

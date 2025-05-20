@@ -19,7 +19,7 @@ export const SkillView = ({
                 {/* const gradeColor = ItemGrade?.find((i) => i[e.Grade])?.[e.Grade] || "#fff"; */}
                     
                     {dataAvatar?.map((e) => {
-                        const gradeColor = ItemGrade?.find((i) => i[e.Rune?.Grade])?.[e.Rune?.Grade] || "#fff";
+                        const gradeColor = ItemGrade[e.Rune?.Grade] || "#fff";
                         //const gradeColor = "var(--grade5)";
 
                         return <Block data={e} imgBg={gradeColor} />;

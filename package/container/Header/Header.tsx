@@ -52,7 +52,7 @@ const SearchBar = ()=>{
 
     const handleSearch = ()=>{
         if(dropDownList.includes(keyWord)){
-            const updateHistory = [keyWord,...dropDownList.filter((i)=>i!==keyWord)]
+            const updateHistory = [keyWord,...dropDownList.filter((i: string)=>i!==keyWord)]
 
             SearchHistoryController.refreshHistory(updateHistory)
             setDropDownList(updateHistory)
@@ -69,9 +69,9 @@ const SearchBar = ()=>{
         navigate(`/armories/${e}`)
     }
 
-    const handleDel = (e) =>{
+    const handleDel = (e:string) =>{
         setDropDownList(
-            dropDownList.filter((i)=>i!==e)
+            dropDownList.filter((i:string)=>i!==e)
         )
         SearchHistoryController.delHistory(e)
         
@@ -82,7 +82,7 @@ const SearchBar = ()=>{
         SearchHistoryController.clearHistory()
     }
 
-    const handleBlur = (e)=>{
+    const handleBlur = (e:any)=>{
         if (!e.currentTarget.contains(e.relatedTarget)) {
             setDropDown(false)
         }
