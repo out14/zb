@@ -12,5 +12,10 @@ app.get('*', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`✅ Server is running on http://localhost:${port}`);
-});
+    console.log(`✅ Server is running on http://localhost:${port}`);
+  }).on('error', (err) => {
+    if (err.code === 'EADDRINUSE') {
+      console.error(`❌ 포트 ${port}는 이미 사용 중입니다.`);
+      process.exit(1); // 프로세스 강제 종료
+    }
+  });
